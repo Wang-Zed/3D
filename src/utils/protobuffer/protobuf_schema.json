@@ -1,0 +1,1382 @@
+{
+  "nested": {
+    "senseAD": {
+      "nested": {
+        "senseview": {
+          "nested": {
+            "ArrowObject": {
+              "fields": {
+                "origin": {
+                  "rule": "required",
+                  "type": "Point3D",
+                  "id": 1
+                },
+                "endPoint": {
+                  "rule": "required",
+                  "type": "Point3D",
+                  "id": 2
+                },
+                "color": {
+                  "rule": "required",
+                  "type": "BaseColor",
+                  "id": 3
+                }
+              }
+            },
+            "ArrowElement": {
+              "fields": {
+                "data": {
+                  "rule": "repeated",
+                  "type": "ArrowObject",
+                  "id": 1
+                }
+              }
+            },
+            "arrowElement": {
+              "type": "ArrowElement",
+              "id": 107,
+              "extend": "BaseElement"
+            },
+            "BaseElement": {
+              "fields": {
+                "topic": {
+                  "rule": "required",
+                  "type": "string",
+                  "id": 1
+                },
+                "type": {
+                  "rule": "required",
+                  "type": "string",
+                  "id": 2
+                },
+                "defaultEnable": {
+                  "rule": "required",
+                  "type": "bool",
+                  "id": 3
+                },
+                "timestampNsec": {
+                  "rule": "required",
+                  "type": "int64",
+                  "id": 4
+                },
+                "group": {
+                  "type": "string",
+                  "id": 5,
+                  "options": {
+                    "default": "others"
+                  }
+                }
+              },
+              "extensions": [[100, 299]]
+            },
+            "Element": {
+              "fields": {
+                "elements": {
+                  "rule": "repeated",
+                  "type": "BaseElement",
+                  "id": 1
+                }
+              }
+            },
+            "BaseColor": {
+              "fields": {
+                "r": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 1,
+                  "options": {
+                    "default": 0
+                  }
+                },
+                "g": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 2,
+                  "options": {
+                    "default": 0
+                  }
+                },
+                "b": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 3,
+                  "options": {
+                    "default": 0
+                  }
+                }
+              }
+            },
+            "RGBAColor": {
+              "fields": {
+                "r": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 1,
+                  "options": {
+                    "default": 0
+                  }
+                },
+                "g": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 2,
+                  "options": {
+                    "default": 0
+                  }
+                },
+                "b": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 3,
+                  "options": {
+                    "default": 0
+                  }
+                },
+                "a": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 4,
+                  "options": {
+                    "default": 0
+                  }
+                }
+              }
+            },
+            "Point": {
+              "fields": {
+                "x": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 1
+                },
+                "y": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 2
+                }
+              }
+            },
+            "Point3D": {
+              "fields": {
+                "x": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 1
+                },
+                "y": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 2
+                },
+                "z": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 3
+                }
+              }
+            },
+            "ObstacleType": {
+              "values": {
+                "VEHICLE": 1,
+                "PEDESTRIAN": 2,
+                "BIKE": 3,
+                "OTHER": 4
+              }
+            },
+            "BoxObject": {
+              "fields": {
+                "id": {
+                  "rule": "required",
+                  "type": "uint32",
+                  "id": 1
+                },
+                "x": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 2
+                },
+                "y": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 3
+                },
+                "width": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 4,
+                  "options": {
+                    "default": 1
+                  }
+                },
+                "height": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 5,
+                  "options": {
+                    "default": 1
+                  }
+                },
+                "length": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 6,
+                  "options": {
+                    "default": 1
+                  }
+                },
+                "yaw": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 7
+                },
+                "type": {
+                  "rule": "required",
+                  "type": "ObstacleType",
+                  "id": 8
+                },
+                "color": {
+                  "rule": "required",
+                  "type": "BaseColor",
+                  "id": 9
+                }
+              }
+            },
+            "BoxElement": {
+              "fields": {
+                "data": {
+                  "rule": "repeated",
+                  "type": "BoxObject",
+                  "id": 1
+                }
+              }
+            },
+            "boxElement": {
+              "type": "BoxElement",
+              "id": 103,
+              "extend": "BaseElement"
+            },
+            "CarPoseObject": {
+              "fields": {
+                "position": {
+                  "rule": "required",
+                  "type": "Point3D",
+                  "id": 1
+                },
+                "rotation": {
+                  "rule": "required",
+                  "type": "Point3D",
+                  "id": 2
+                }
+              }
+            },
+            "carPose": {
+              "type": "CarPoseObject",
+              "id": 112,
+              "extend": "BaseElement"
+            },
+            "ConsoleElement": {
+              "fields": {
+                "data": {
+                  "rule": "repeated",
+                  "type": "string",
+                  "id": 1
+                }
+              }
+            },
+            "consoleElement": {
+              "type": "ConsoleElement",
+              "id": 115,
+              "extend": "BaseElement"
+            },
+            "CylinderObject": {
+              "fields": {
+                "center": {
+                  "rule": "required",
+                  "type": "Point3D",
+                  "id": 1
+                },
+                "rotation": {
+                  "rule": "required",
+                  "type": "Point3D",
+                  "id": 2
+                },
+                "radiusTop": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 3
+                },
+                "radiusBottom": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 4
+                },
+                "height": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 5
+                },
+                "color": {
+                  "rule": "required",
+                  "type": "BaseColor",
+                  "id": 6
+                }
+              }
+            },
+            "CylinderElement": {
+              "fields": {
+                "data": {
+                  "rule": "repeated",
+                  "type": "CylinderObject",
+                  "id": 1
+                }
+              }
+            },
+            "cylinderElement": {
+              "type": "CylinderElement",
+              "id": 110,
+              "extend": "BaseElement"
+            },
+            "EllipseShape": {
+              "fields": {
+                "x": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 1
+                },
+                "y": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 2
+                },
+                "z": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 3
+                },
+                "radiusX": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 4
+                },
+                "radiusY": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 5
+                },
+                "startAngle": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 6
+                }
+              }
+            },
+            "EllipseObject": {
+              "fields": {
+                "ellipse": {
+                  "rule": "required",
+                  "type": "EllipseShape",
+                  "id": 1
+                },
+                "opacity": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 2
+                },
+                "color": {
+                  "rule": "required",
+                  "type": "BaseColor",
+                  "id": 3
+                }
+              }
+            },
+            "EllipseElement": {
+              "fields": {
+                "data": {
+                  "rule": "repeated",
+                  "type": "EllipseObject",
+                  "id": 1
+                }
+              }
+            },
+            "ellipseElement": {
+              "type": "EllipseElement",
+              "id": 111,
+              "extend": "BaseElement"
+            },
+            "FreespaceHole": {
+              "fields": {
+                "point": {
+                  "rule": "repeated",
+                  "type": "Point",
+                  "id": 1
+                }
+              }
+            },
+            "FreespaceObject": {
+              "fields": {
+                "contour": {
+                  "rule": "repeated",
+                  "type": "Point",
+                  "id": 1
+                },
+                "holes": {
+                  "rule": "repeated",
+                  "type": "FreespaceHole",
+                  "id": 2
+                },
+                "z": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 3,
+                  "options": {
+                    "default": -0.01
+                  }
+                },
+                "color": {
+                  "rule": "required",
+                  "type": "RGBAColor",
+                  "id": 4
+                },
+                "x": {
+                  "type": "float",
+                  "id": 5,
+                  "options": {
+                    "default": 0
+                  }
+                },
+                "y": {
+                  "type": "float",
+                  "id": 6,
+                  "options": {
+                    "default": 0
+                  }
+                },
+                "roll": {
+                  "type": "float",
+                  "id": 7,
+                  "options": {
+                    "default": 0
+                  }
+                },
+                "pitch": {
+                  "type": "float",
+                  "id": 8,
+                  "options": {
+                    "default": 0
+                  }
+                },
+                "yaw": {
+                  "type": "float",
+                  "id": 9,
+                  "options": {
+                    "default": 0
+                  }
+                },
+                "id": {
+                  "type": "uint64",
+                  "id": 10,
+                  "options": {
+                    "default": 0
+                  }
+                }
+              }
+            },
+            "FreespaceElement": {
+              "fields": {
+                "data": {
+                  "rule": "repeated",
+                  "type": "FreespaceObject",
+                  "id": 1
+                }
+              }
+            },
+            "freespaceElement": {
+              "type": "FreespaceElement",
+              "id": 116,
+              "extend": "BaseElement"
+            },
+            "Matrix4d": {
+              "fields": {
+                "data": {
+                  "rule": "repeated",
+                  "type": "float",
+                  "id": 1,
+                  "options": {
+                    "packed": false
+                  }
+                }
+              }
+            },
+            "ImageElement": {
+              "fields": {
+                "data": {
+                  "rule": "required",
+                  "type": "bytes",
+                  "id": 1
+                },
+                "mvpMatrix": {
+                  "rule": "required",
+                  "type": "Matrix4d",
+                  "id": 2
+                },
+                "height": {
+                  "rule": "required",
+                  "type": "int32",
+                  "id": 3
+                },
+                "width": {
+                  "rule": "required",
+                  "type": "int32",
+                  "id": 4
+                }
+              }
+            },
+            "imageElement": {
+              "type": "ImageElement",
+              "id": 121,
+              "extend": "BaseElement"
+            },
+            "ImageMarkType": {
+              "values": {
+                "MarkLine": 0,
+                "Mark2DRect": 1,
+                "Mark3DRect": 2,
+                "MarkPolygon": 3,
+                "MarkCircle": 4,
+                "MarkStatus": 10,
+                "MarkTurnInfo": 11,
+                "MarkText": 12,
+                "MarkOverlay": 9999,
+                "MarkNone": -1
+              }
+            },
+            "ImageTurnDirection": {
+              "values": {
+                "TurnLeft": 0,
+                "TrunRight": 1,
+                "BreakLight": 2,
+                "TurnNone": -1
+              }
+            },
+            "ImagePoint2D": {
+              "fields": {
+                "x": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 1,
+                  "options": {
+                    "default": 0
+                  }
+                },
+                "y": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 2,
+                  "options": {
+                    "default": 0
+                  }
+                }
+              }
+            },
+            "ImageMarkColor": {
+              "fields": {
+                "enable": {
+                  "type": "bool",
+                  "id": 1,
+                  "options": {
+                    "default": false
+                  }
+                },
+                "color": {
+                  "rule": "required",
+                  "type": "string",
+                  "id": 2,
+                  "options": {
+                    "default": "#FFFFFF"
+                  }
+                }
+              }
+            },
+            "MarkObjInfo": {
+              "fields": {
+                "points": {
+                  "rule": "repeated",
+                  "type": "ImagePoint2D",
+                  "id": 1
+                },
+                "borderColor": {
+                  "type": "ImageMarkColor",
+                  "id": 2
+                },
+                "fillColor": {
+                  "type": "ImageMarkColor",
+                  "id": 3
+                },
+                "borderWidth": {
+                  "type": "uint32",
+                  "id": 4,
+                  "options": {
+                    "default": 1
+                  }
+                },
+                "circleRadius": {
+                  "type": "float",
+                  "id": 5,
+                  "options": {
+                    "default": 0
+                  }
+                },
+                "turnDirection": {
+                  "type": "ImageTurnDirection",
+                  "id": 6,
+                  "options": {
+                    "default": "TurnNone"
+                  }
+                },
+                "text": {
+                  "type": "string",
+                  "id": 7,
+                  "options": {
+                    "default": ""
+                  }
+                }
+              }
+            },
+            "ImageMarks": {
+              "fields": {
+                "type": {
+                  "type": "ImageMarkType",
+                  "id": 1,
+                  "options": {
+                    "default": "MarkNone"
+                  }
+                },
+                "objInfo": {
+                  "type": "MarkObjInfo",
+                  "id": 2
+                }
+              }
+            },
+            "ImageOverlayBasicInfo": {
+              "fields": {
+                "date": {
+                  "type": "string",
+                  "id": 1,
+                  "options": {
+                    "default": ""
+                  }
+                },
+                "resolution": {
+                  "type": "string",
+                  "id": 2,
+                  "options": {
+                    "default": ""
+                  }
+                },
+                "fps": {
+                  "type": "string",
+                  "id": 3,
+                  "options": {
+                    "default": ""
+                  }
+                }
+              }
+            },
+            "ImageOverlayODDInfo": {
+              "fields": {
+                "weather": {
+                  "type": "string",
+                  "id": 1,
+                  "options": {
+                    "default": ""
+                  }
+                },
+                "sunlight": {
+                  "type": "string",
+                  "id": 2,
+                  "options": {
+                    "default": ""
+                  }
+                },
+                "roadtype": {
+                  "type": "string",
+                  "id": 3,
+                  "options": {
+                    "default": ""
+                  }
+                }
+              }
+            },
+            "ImageOverlayBlockageInfo": {
+              "fields": {
+                "blockage": {
+                  "type": "string",
+                  "id": 1,
+                  "options": {
+                    "default": ""
+                  }
+                }
+              }
+            },
+            "ImageOverlay": {
+              "fields": {
+                "basicInfo": {
+                  "type": "ImageOverlayBasicInfo",
+                  "id": 1
+                },
+                "oddInfo": {
+                  "type": "ImageOverlayODDInfo",
+                  "id": 2
+                },
+                "blockageInfo": {
+                  "type": "ImageOverlayBlockageInfo",
+                  "id": 3
+                }
+              }
+            },
+            "ImageElementWithMark": {
+              "fields": {
+                "imageData": {
+                  "rule": "required",
+                  "type": "bytes",
+                  "id": 1
+                },
+                "imageWidth": {
+                  "rule": "required",
+                  "type": "int32",
+                  "id": 2
+                },
+                "imageHeight": {
+                  "rule": "required",
+                  "type": "int32",
+                  "id": 3
+                },
+                "overlay": {
+                  "type": "ImageOverlay",
+                  "id": 4
+                },
+                "imageMarks": {
+                  "rule": "repeated",
+                  "type": "ImageMarks",
+                  "id": 5
+                }
+              }
+            },
+            "imageElementsWithMarks": {
+              "type": "ImageElementWithMark",
+              "id": 126,
+              "extend": "BaseElement"
+            },
+            "MeshObject": {
+              "fields": {
+                "vertices": {
+                  "rule": "repeated",
+                  "type": "Point3D",
+                  "id": 1
+                },
+                "index": {
+                  "rule": "repeated",
+                  "type": "uint32",
+                  "id": 2,
+                  "options": {
+                    "packed": false
+                  }
+                },
+                "color": {
+                  "rule": "required",
+                  "type": "BaseColor",
+                  "id": 3
+                }
+              }
+            },
+            "MeshElement": {
+              "fields": {
+                "data": {
+                  "rule": "repeated",
+                  "type": "MeshObject",
+                  "id": 1
+                }
+              }
+            },
+            "meshElement": {
+              "type": "MeshElement",
+              "id": 122,
+              "extend": "BaseElement"
+            },
+            "PointElement": {
+              "fields": {
+                "data": {
+                  "rule": "repeated",
+                  "type": "float",
+                  "id": 1,
+                  "options": {
+                    "packed": false
+                  }
+                },
+                "color": {
+                  "rule": "required",
+                  "type": "BaseColor",
+                  "id": 2
+                },
+                "size": {
+                  "type": "float",
+                  "id": 3
+                }
+              }
+            },
+            "pointElement": {
+              "type": "PointElement",
+              "id": 120,
+              "extend": "BaseElement"
+            },
+            "PolygonObject": {
+              "fields": {
+                "id": {
+                  "rule": "required",
+                  "type": "uint32",
+                  "id": 1
+                },
+                "contour": {
+                  "rule": "repeated",
+                  "type": "Point",
+                  "id": 2
+                },
+                "height": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 3
+                },
+                "type": {
+                  "rule": "required",
+                  "type": "ObstacleType",
+                  "id": 4
+                },
+                "color": {
+                  "rule": "required",
+                  "type": "BaseColor",
+                  "id": 5
+                }
+              }
+            },
+            "PolygonElement": {
+              "fields": {
+                "data": {
+                  "rule": "repeated",
+                  "type": "PolygonObject",
+                  "id": 1
+                }
+              }
+            },
+            "polygonElement": {
+              "type": "PolygonElement",
+              "id": 108,
+              "extend": "BaseElement"
+            },
+            "PolyLineType": {
+              "values": {
+                "DRAW_BOTH_SOLID_AND_GRADIENT_LINE": 0,
+                "DRAW_SOLID_LINE_ONLY": 1,
+                "DRAW_GRADIENT_LINE_ONLY": 2,
+                "DASHED": 3,
+                "SOLID": 4,
+                "DOUBLE_DASHED": 5,
+                "DOUBLE_SOLID": 6,
+                "DASHED_SOLID": 7,
+                "SOLID_DASHED": 8
+              }
+            },
+            "TrajectoryVisual": {
+              "fields": {
+                "x": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 1
+                },
+                "y": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 2
+                },
+                "colorEnable": {
+                  "rule": "required",
+                  "type": "bool",
+                  "id": 3
+                },
+                "color": {
+                  "rule": "required",
+                  "type": "RGBAColor",
+                  "id": 4
+                }
+              }
+            },
+            "PolylineObject": {
+              "fields": {
+                "point": {
+                  "rule": "repeated",
+                  "type": "TrajectoryVisual",
+                  "id": 1
+                },
+                "lineType": {
+                  "rule": "required",
+                  "type": "PolyLineType",
+                  "id": 2
+                },
+                "color": {
+                  "rule": "required",
+                  "type": "BaseColor",
+                  "id": 3
+                },
+                "width": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 4,
+                  "options": {
+                    "default": 0.1
+                  }
+                }
+              }
+            },
+            "PolylineElement": {
+              "fields": {
+                "data": {
+                  "rule": "repeated",
+                  "type": "PolylineObject",
+                  "id": 1
+                }
+              }
+            },
+            "polylineElement": {
+              "type": "PolylineElement",
+              "id": 104,
+              "extend": "BaseElement"
+            },
+            "SphereObject": {
+              "fields": {
+                "center": {
+                  "rule": "required",
+                  "type": "Point3D",
+                  "id": 1
+                },
+                "radius": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 2
+                },
+                "color": {
+                  "rule": "required",
+                  "type": "BaseColor",
+                  "id": 3
+                }
+              }
+            },
+            "SphereElement": {
+              "fields": {
+                "data": {
+                  "rule": "repeated",
+                  "type": "SphereObject",
+                  "id": 1
+                }
+              }
+            },
+            "sphereElement": {
+              "type": "SphereElement",
+              "id": 109,
+              "extend": "BaseElement"
+            },
+            "StatusObject": {
+              "fields": {
+                "name": {
+                  "rule": "required",
+                  "type": "string",
+                  "id": 1
+                },
+                "color": {
+                  "rule": "required",
+                  "type": "string",
+                  "id": 2
+                }
+              }
+            },
+            "StatusElement": {
+              "fields": {
+                "data": {
+                  "rule": "repeated",
+                  "type": "StatusObject",
+                  "id": 1
+                }
+              }
+            },
+            "statusElement": {
+              "type": "StatusElement",
+              "id": 106,
+              "extend": "BaseElement"
+            },
+            "NodeStatus": {
+              "fields": {
+                "hostName": {
+                  "rule": "required",
+                  "type": "string",
+                  "id": 1
+                },
+                "nodeName": {
+                  "rule": "required",
+                  "type": "string",
+                  "id": 2
+                },
+                "pid": {
+                  "rule": "required",
+                  "type": "int32",
+                  "id": 3
+                },
+                "status": {
+                  "rule": "required",
+                  "type": "int32",
+                  "id": 4
+                },
+                "cpuUsage": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 5
+                },
+                "memoryUsageKb": {
+                  "rule": "required",
+                  "type": "uint64",
+                  "id": 6
+                }
+              }
+            },
+            "DeviceStatus": {
+              "fields": {
+                "hostName": {
+                  "rule": "required",
+                  "type": "string",
+                  "id": 1
+                },
+                "deviceName": {
+                  "rule": "required",
+                  "type": "string",
+                  "id": 2
+                },
+                "diskAvailable": {
+                  "rule": "required",
+                  "type": "int32",
+                  "id": 3
+                },
+                "IORate": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 4
+                },
+                "temperature": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 5
+                }
+              }
+            },
+            "NodeStatusObject": {
+              "fields": {
+                "nodeStatus": {
+                  "rule": "repeated",
+                  "type": "NodeStatus",
+                  "id": 1
+                },
+                "deviceStatus": {
+                  "rule": "repeated",
+                  "type": "DeviceStatus",
+                  "id": 2
+                }
+              }
+            },
+            "nodeStatusElement": {
+              "type": "NodeStatusObject",
+              "id": 117,
+              "extend": "BaseElement"
+            },
+            "TextElement": {
+              "fields": {
+                "data": {
+                  "rule": "repeated",
+                  "type": "string",
+                  "id": 1
+                }
+              }
+            },
+            "textElement": {
+              "type": "TextElement",
+              "id": 102,
+              "extend": "BaseElement"
+            },
+            "TextSpriteObject": {
+              "fields": {
+                "text": {
+                  "rule": "required",
+                  "type": "string",
+                  "id": 1
+                },
+                "fontSize": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 2
+                },
+                "position": {
+                  "rule": "required",
+                  "type": "Point",
+                  "id": 3
+                },
+                "color": {
+                  "type": "string",
+                  "id": 4
+                },
+                "id": {
+                  "type": "uint32",
+                  "id": 5
+                }
+              }
+            },
+            "TextSpriteObjectElement": {
+              "fields": {
+                "data": {
+                  "rule": "repeated",
+                  "type": "TextSpriteObject",
+                  "id": 1
+                }
+              }
+            },
+            "textSpriteElement": {
+              "type": "TextSpriteObjectElement",
+              "id": 105,
+              "extend": "BaseElement"
+            },
+            "TLInfo": {
+              "fields": {
+                "id": {
+                  "rule": "required",
+                  "type": "uint32",
+                  "id": 1
+                },
+                "status": {
+                  "rule": "required",
+                  "type": "uint32",
+                  "id": 2
+                },
+                "width": {
+                  "type": "float",
+                  "id": 3,
+                  "options": {
+                    "default": 1.5
+                  }
+                },
+                "height": {
+                  "type": "float",
+                  "id": 4,
+                  "options": {
+                    "default": 0.5
+                  }
+                },
+                "position": {
+                  "rule": "required",
+                  "type": "Point3D",
+                  "id": 5
+                },
+                "rotation": {
+                  "rule": "required",
+                  "type": "Point3D",
+                  "id": 6
+                }
+              }
+            },
+            "TLElement": {
+              "fields": {
+                "data": {
+                  "rule": "repeated",
+                  "type": "TLInfo",
+                  "id": 1
+                }
+              }
+            },
+            "tlElement": {
+              "type": "TLElement",
+              "id": 125,
+              "extend": "BaseElement"
+            },
+            "TrafficLightGroupStatus": {
+              "fields": {
+                "groupId": {
+                  "rule": "required",
+                  "type": "string",
+                  "id": 1
+                },
+                "colorLabel": {
+                  "rule": "required",
+                  "type": "uint32",
+                  "id": 2
+                },
+                "turnType": {
+                  "rule": "required",
+                  "type": "uint32",
+                  "id": 3
+                },
+                "duringTime": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 4
+                }
+              }
+            },
+            "TrafficLightGroupElement": {
+              "fields": {
+                "turnAroundStatus": {
+                  "rule": "required",
+                  "type": "TrafficLightGroupStatus",
+                  "id": 1
+                },
+                "turnLeftStatus": {
+                  "rule": "required",
+                  "type": "TrafficLightGroupStatus",
+                  "id": 2
+                },
+                "goStraightStatus": {
+                  "rule": "required",
+                  "type": "TrafficLightGroupStatus",
+                  "id": 3
+                },
+                "turnRightStatus": {
+                  "rule": "required",
+                  "type": "TrafficLightGroupStatus",
+                  "id": 4
+                }
+              }
+            },
+            "trafficLightGroupElement": {
+              "type": "TrafficLightGroupElement",
+              "id": 123,
+              "extend": "BaseElement"
+            },
+            "MessageType": {
+              "values": {
+                "TEXT": 1,
+                "BINARY": 2,
+                "INNER": 3
+              }
+            },
+            "SocketType": {
+              "values": {
+                "COMMON": 1,
+                "VIRTUAL_PILOT": 2,
+                "PILOT_HMI": 3,
+                "LAELAPS": 4,
+                "CLIENT_PILOT": 5,
+                "NOT_SHOWING_HMI": 6
+              }
+            },
+            "SenseViewMessage": {
+              "fields": {
+                "topic": {
+                  "rule": "required",
+                  "type": "string",
+                  "id": 1
+                },
+                "messageType": {
+                  "rule": "required",
+                  "type": "MessageType",
+                  "id": 2
+                },
+                "msg": {
+                  "rule": "required",
+                  "type": "string",
+                  "id": 3
+                },
+                "socketType": {
+                  "type": "SocketType",
+                  "id": 4,
+                  "options": {
+                    "default": "COMMON"
+                  }
+                },
+                "vital": {
+                  "type": "bool",
+                  "id": 5,
+                  "options": {
+                    "default": false
+                  }
+                }
+              }
+            },
+            "FilterCommand": {
+              "fields": {
+                "action": {
+                  "rule": "required",
+                  "type": "string",
+                  "id": 1
+                },
+                "type": {
+                  "rule": "required",
+                  "type": "string",
+                  "id": 2
+                },
+                "topic": {
+                  "rule": "required",
+                  "type": "string",
+                  "id": 3
+                },
+                "subTopic": {
+                  "type": "string",
+                  "id": 4
+                },
+                "allSubTopic": {
+                  "rule": "repeated",
+                  "type": "string",
+                  "id": 5
+                }
+              }
+            },
+            "VehicleInfoElement": {
+              "fields": {
+                "throttle": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 1
+                },
+                "speed": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 2
+                },
+                "brake": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 3
+                },
+                "steeringAngle": {
+                  "rule": "required",
+                  "type": "float",
+                  "id": 4
+                }
+              }
+            },
+            "vehicleInfoElement": {
+              "type": "VehicleInfoElement",
+              "id": 118,
+              "extend": "BaseElement"
+            },
+            "VehicleStatElement": {
+              "fields": {
+                "AutoCtrlStat": {
+                  "rule": "required",
+                  "type": "uint32",
+                  "id": 1
+                }
+              }
+            },
+            "vehicleStatElement": {
+              "type": "VehicleStatElement",
+              "id": 119,
+              "extend": "BaseElement"
+            }
+          }
+        }
+      }
+    }
+  }
+}

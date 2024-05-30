@@ -1,0 +1,110 @@
+{
+  "asset": {
+    "version": "2.0",
+    "generator": "Created using the official Cinema 4D glTF Exporter 1.000x284978"
+  },
+  "scenes": [
+    {
+      "nodes": [0]
+    }
+  ],
+  "nodes": [
+    {
+      "name": "禁止",
+      "mesh": 0,
+      "translation": [0.0, 0.0, 0.0],
+      "rotation": [0.0, -0.7071067690849304, 0.0, -0.7071067690849304],
+      "scale": [1.0, 1.0, 1.0]
+    }
+  ],
+  "meshes": [
+    {
+      "name": "禁止",
+      "primitives": [
+        {
+          "attributes": {
+            "POSITION": 1,
+            "NORMAL": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 0,
+          "material": 0
+        }
+      ]
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "type": "SCALAR",
+      "componentType": 5123,
+      "count": 72,
+      "byteOffset": 0,
+      "min": [0],
+      "max": [47]
+    },
+    {
+      "bufferView": 1,
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 48,
+      "byteOffset": 0,
+      "min": [
+        -0.09866046905517578, -0.09866070747375488, -0.005307495594024658
+      ],
+      "max": [0.09866046905517578, 0.09866070747375488, 0.005307495594024658]
+    },
+    {
+      "bufferView": 1,
+      "type": "VEC3",
+      "componentType": 5126,
+      "count": 48,
+      "byteOffset": 12,
+      "min": [-0.7070625424385071, -0.7070937752723694, -1.0],
+      "max": [0.7070625424385071, 0.7070937752723694, 1.0]
+    },
+    {
+      "bufferView": 1,
+      "type": "VEC2",
+      "componentType": 5126,
+      "count": 48,
+      "byteOffset": 24,
+      "min": [0.0, 0.0],
+      "max": [1.0, 1.0]
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 144,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 144,
+      "byteStride": 32,
+      "byteLength": 1536,
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "uri": "data:application/octet-stream;base64,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",
+      "byteLength": 1680
+    }
+  ],
+  "materials": [
+    {
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [1.0, 1.0, 1.0, 1.0],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.5
+      },
+      "emissiveFactor": [0.0, 0.0, 0.0],
+      "alphaMode": "OPAQUE",
+      "doubleSided": false,
+      "name": "禁止"
+    }
+  ]
+}

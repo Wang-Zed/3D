@@ -1,0 +1,98 @@
+.w-full {
+  width: 100%;
+}
+.h-full {
+  height: 100%;
+}
+
+// flex
+.flex {
+  display: flex;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.justify-around {
+  justify-content: space-around;
+}
+
+.justify-start {
+  justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.items-center {
+  align-items: center;
+}
+
+// overflow
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+// position
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+// [x]: 预设样式
+.all-full {
+  .w-full;
+  .h-full;
+}
+
+.flex-center {
+  .flex;
+  .justify-center;
+  .items-center;
+}
+
+.all-full-center {
+  .all-full;
+  .flex-center;
+}

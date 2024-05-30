@@ -1,0 +1,12 @@
+{
+  "editor.mouseWheelZoom": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "files.exclude": {
+    "*.lock": true,
+    "pnpm-lock.yaml": true
+  }
+}
