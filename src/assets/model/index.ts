@@ -1,3 +1,6 @@
+/* eslint-disable simple-import-sort/exports */
+// 自车
+export { default as EgoCar } from "./participant/自车.gltf?url";
 // participant 交通参与者
 export { default as SUV } from "./participant/SUV.gltf?url";
 export { default as Truck } from "./participant/中卡车.gltf?url";
@@ -103,3 +106,52 @@ export { default as Speed_limit_120 } from "./traffic-sign/限速120.gltf?url";
 export { default as X_weight } from "./traffic-sign/限重.gltf?url";
 export { default as X_height } from "./traffic-sign/限高.gltf?url";
 export { default as Close_to_toll_gate } from "./traffic-sign/高速终点.gltf?url";
+
+// roadmarker 路标箭头
+export { default as Straight } from "./road-marker/直行.gltf?url";
+export { default as LeftTurn } from "./road-marker/左转.gltf?url";
+export { default as RightTurn } from "./road-marker/右转.gltf?url";
+export { default as LeftRightTurn } from "./road-marker/左右转.gltf?url";
+export { default as StraightOrLeft } from "./road-marker/直行左转.gltf?url";
+export { default as StraightOrRight } from "./road-marker/直行右转.gltf?url";
+export { default as StraightLeftRight } from "./road-marker/直行左右转.gltf?url";
+export { default as UTurn } from "./road-marker/掉头.gltf?url";
+export { default as StraightUTurn } from "./road-marker/直行掉头.gltf?url";
+export { default as LeftTurnUTurn } from "./road-marker/左转掉头.gltf?url";
+export { default as LeftTurnAndInterflow } from "./road-marker/左弯左斜.gltf?url";
+export { default as RightTurnAndInterflow } from "./road-marker/右弯右斜.gltf?url";
+export { default as RhombicMark } from "./road-marker/斑马预警.gltf?url";
+export { default as SlowdownToGiveway } from "./road-marker/减速让行.gltf?url";
+export { default as StopToGiveway } from "./road-marker/停止让行.gltf?url";
+export { default as StraightULeft } from "./road-marker/直行左转掉头.gltf?url";
+export { default as MinSpeedLimit5 } from "./road-marker/地面标识-限速下限5.gltf?url";
+export { default as MinSpeedLimit10 } from "./road-marker/地面标识-限速下限10.gltf?url";
+export { default as MinSpeedLimit20 } from "./road-marker/地面标识-限速下限20.gltf?url";
+export { default as MinSpeedLimit30 } from "./road-marker/地面标识-限速下限30.gltf?url";
+export { default as MinSpeedLimit40 } from "./road-marker/地面标识-限速下限40.gltf?url";
+export { default as MinSpeedLimit50 } from "./road-marker/地面标识-限速下限50.gltf?url";
+export { default as MinSpeedLimit60 } from "./road-marker/地面标识-限速下限60.gltf?url";
+export { default as MinSpeedLimit70 } from "./road-marker/地面标识-限速下限70.gltf?url";
+export { default as MinSpeedLimit80 } from "./road-marker/地面标识-限速下限80.gltf?url";
+export { default as MinSpeedLimit90 } from "./road-marker/地面标识-限速下限90.gltf?url";
+export { default as MinSpeedLimit100 } from "./road-marker/地面标识-限速下限100.gltf?url";
+export { default as MinSpeedLimit110 } from "./road-marker/地面标识-限速下限110.gltf?url";
+export { default as MinSpeedLimit120 } from "./road-marker/地面标识-限速下限120.gltf?url";
+export { default as MinSpeedLimitOther } from "./road-marker/地面标识-MinSpeedLimitOther.gltf?url";
+export { default as MaxSpeedLimit5 } from "./road-marker/地面标识-限速上限5.gltf?url";
+export { default as MaxSpeedLimit10 } from "./road-marker/地面标识-限速上限10.gltf?url";
+export { default as MaxSpeedLimit20 } from "./road-marker/地面标识-限速上限20.gltf?url";
+export { default as MaxSpeedLimit30 } from "./road-marker/地面标识-限速上限30.gltf?url";
+export { default as MaxSpeedLimit40 } from "./road-marker/地面标识-限速上限40.gltf?url";
+export { default as MaxSpeedLimit50 } from "./road-marker/地面标识-限速上限50.gltf?url";
+export { default as MaxSpeedLimit60 } from "./road-marker/地面标识-限速上限60.gltf?url";
+export { default as MaxSpeedLimit70 } from "./road-marker/地面标识-限速上限70.gltf?url";
+export { default as MaxSpeedLimit80 } from "./road-marker/地面标识-限速上限80.gltf?url";
+export { default as MaxSpeedLimit90 } from "./road-marker/地面标识-限速上限90.gltf?url";
+export { default as MaxSpeedLimit100 } from "./road-marker/地面标识-限速上限100.gltf?url";
+export { default as MaxSpeedLimit110 } from "./road-marker/地面标识-限速上限110.gltf?url";
+export { default as MaxSpeedLimit120 } from "./road-marker/地面标识-限速上限120.gltf?url";
+export { default as MaxSpeedLimitOther } from "./road-marker/地面标识-MaxSpeedLimitOther.gltf?url";
+
+// Pole
+export { default as RoadPole } from "./pole/pole路杆.gltf?url";

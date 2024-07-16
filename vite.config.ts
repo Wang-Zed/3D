@@ -18,6 +18,17 @@ if (fs.existsSync(".git")) {
   }
 }
 
+const buildTime = new Intl.DateTimeFormat("zh-CN", {
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+  hour: "2-digit",
+  minute: "2-digit",
+  second: "2-digit",
+  hour12: false,
+  timeZone: "Asia/Shanghai" // 使用中国时区
+}).format(new Date());
+
 export default defineConfig({
   base: "./",
   build: {
@@ -29,12 +40,16 @@ export default defineConfig({
         assetFileNames: "[ext]/[name]-[hash].[ext]",
         manualChunks(id) {
           if (id.includes("node_modules")) {
-            return (
-              id
-                .toString()
-                .match(/\/node_modules\/(?!.pnpm)(?<moduleName>[^/]*)\//)
-                ?.groups?.moduleName ?? "vender"
-            );
+            if (
+              ["three", "echarts"].some((moduleName) => id.includes(moduleName))
+            ) {
+              return (
+                id
+                  .toString()
+                  .match(/\/node_modules\/(?!.pnpm)(?<moduleName>[^/]*)\//)
+                  ?.groups?.moduleName ?? "vender"
+              );
+            }
           }
         }
       }
@@ -60,10 +75,19 @@ export default defineConfig({
     }
   },
   define: {
-    __COMMITID__: JSON.stringify(commitId)
+    __COMMITID__: JSON.stringify(commitId),
+    __BUILDTIME__: JSON.stringify(buildTime)
   },
   server: {
     open: true,
-    strictPort: false
+    strictPort: false,
+    proxy: {
+      "/api": {
+        // target: "http://datapro.senseauto.com/api/data/aws/listAnonymous",
+        target: "http://localhost:3000",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, "")
+      }
+    }
   }
 });

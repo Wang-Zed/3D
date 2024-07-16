@@ -1,40 +1,16 @@
-export function debounce(func: <T>(..._args: T[]) => void, delay = 0) {
-  let timerId: number;
-  return <T>(...args: T[]) => {
-    clearTimeout(timerId);
-    timerId = window.setTimeout(() => {
-      func(args);
-    }, delay);
-  };
-}
+import type { TopicEvent } from "@/typings";
 
-export function throttle(func: <T>(..._args: T[]) => void, delay = 0) {
-  let timerId: number;
-  return <T>(...args: T[]) => {
-    if (!timerId) {
-      timerId = window.setTimeout(() => {
-        func(args);
-        timerId = 0;
-      }, delay);
-    }
-  };
-}
-
-export function resizeListener(
-  dom: HTMLElement,
-  callback: <T>(...args: T[]) => void
-) {
-  const ob = new ResizeObserver(callback);
-  ob.observe(dom);
-  return ob;
-}
+import {
+  ATTRIBUTE_MAP,
+  ProtobufElementSchema
+} from "./protobuffer/protobuf_parser";
 
 const SECOND = 1000;
 const MINUTE = 60 * SECOND;
 const HOUR = 60 * MINUTE;
 
 export function formatTime(ms: number): string {
-  if (ms <= 0) {
+  if (typeof ms !== "number" || Number.isNaN(ms) || ms <= 0) {
     return "00:00";
   }
   const hour = Math.floor(ms / HOUR);
@@ -97,4 +73,71 @@ export function binarySearch<T>(arr: T[], comparator: (item: T) => number) {
 
   // Target not found, return the index where it should be inserted
   return start;
+}
+
+export function formatMsg(
+  msg: string | ArrayBuffer | null
+): Parameters<TopicEvent[keyof TopicEvent]>[number] | undefined {
+  if (typeof msg === "string") {
+    const data = JSON.parse(msg);
+    if (data.value?.value0) {
+      return {
+        topic: data.topic,
+        data: data.value.value0
+      };
+    } else if (data.elements) {
+      const element = data.elements[0];
+      const type = element.type as keyof typeof ATTRIBUTE_MAP;
+      return {
+        topic: element.topic,
+        data: {
+          data: element[ATTRIBUTE_MAP[type]].data,
+          defaultEnable: element.defaultEnable,
+          group: "others",
+          style: {},
+          timestamp_nsec: element.timestampNsec,
+          topic: element.topic,
+          type: type
+        }
+      };
+    }
+    return {
+      topic: data.topic,
+      data: data
+    };
+  } else if (msg instanceof ArrayBuffer) {
+    try {
+      const uint8Array = new Uint8Array(msg);
+      const res = ProtobufElementSchema.decode(uint8Array) as any;
+      const element = res.elements[0];
+      const type = element.type as keyof typeof ATTRIBUTE_MAP;
+      return {
+        topic: element.topic,
+        data: {
+          data: element[ATTRIBUTE_MAP[type]].data,
+          defaultEnable: element.defaultEnable,
+          group: "others",
+          style: {},
+          timestamp_nsec: element.timestampNsec,
+          topic: element.topic,
+          type: type
+        }
+      };
+    } catch (error) {
+      // console.error("protobuf数据处理错误:", error);
+    }
+  } else {
+    console.log("unknown data", msg);
+  }
+}
+
+/**
+ * 转换时间戳为毫秒时间戳
+ * @param timestamp 整数时间戳
+ * @returns 毫秒时间戳
+ */
+export function transform_MS(timestamp: number) {
+  const timeLength = timestamp.toFixed().length;
+  const lengthDiff = timeLength - 13;
+  return timestamp / Math.pow(10, lengthDiff);
 }
